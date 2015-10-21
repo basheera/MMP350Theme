@@ -53,7 +53,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 			
-			//comment to trigger change, commit and puch
+			//comment to trigger change, commit and punch
 			
 		
 			
