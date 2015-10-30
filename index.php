@@ -33,7 +33,7 @@ get_header(); ?>
 		
 			
 			<?php //The Quarter Post ?>
-			<?php query_post('category_name=Quarter'); ?>
+			<?php //query_post('category_name=Quarter'); ?>
 			
 			<?php /* Start the Loop */ ?>
 			
@@ -52,19 +52,19 @@ get_header(); ?>
 			<?php endwhile; ?>
 			
 			<?php //The Quarter Post ?>
-			<?php query_post('category_name=Quarter'); ?>
+			<?php //query_post('category_name=Quarter'); ?>
 			
 			<?php /* Start the Loop */ ?>
 			
 		
 			<?php while ( have_posts() ) : the_post(); ?>
 				
-				<?php $do_not_duplicate = $post->ID;?> 
-				<div class="don_class">
+				<?php// $do_not_duplicate = $post->ID;?>
+				<!--<div class="don_class">
 					
 					$do_not_duplicate = $post->ID; 
 					
-				</div>
+				</div>!-->
 				
 				
 
@@ -83,6 +83,27 @@ get_header(); ?>
 				
 			<?php endwhile; ?>
 			
+			<?php rewind_posts(); ?>
+
+<?php
+
+$args = array( 'post_type' => 'portfolio_item', 'posts_per_page' => 10 );
+$loop = new WP_Query( $args );
+while ( $loop->have_posts() ) : $loop->the_post();
+
+the_title();
+echo '<div class="entry-content">';
+echo '<div id="lame">';
+the_content();
+echo '</div>';
+echo '</div>';
+
+endwhile;
+
+?>
+
+
+
 			
 			
 			
